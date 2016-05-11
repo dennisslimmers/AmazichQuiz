@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActvity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".OefenActivity" />
+        <activity android:name=".SpeelActivity" />
+        <activity android:name=".OverActivity"></activity>
     </application>
 
 </manifest>
