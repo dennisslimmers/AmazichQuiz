@@ -15,20 +15,17 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_actvity);
     }
 
-    public void RedirectOefen(View v)
-    {
+    public void RedirectOefen(View v) {
         Intent i = new Intent(this, OefenActivity.class);
         startActivity(i);
     }
 
-    public void RedirectSpeel(View v)
-    {
+    public void RedirectSpeel(View v) {
         Intent i = new Intent(this, SpeelActivity.class);
         startActivity(i);
     }
 
-    public void RedirectOver(View v)
-    {
+    public void RedirectOver(View v) {
         Intent i = new Intent(this, OverActivity.class);
         startActivity(i);
     }
