@@ -53,9 +53,44 @@ public class SpeelActivity extends AppCompatActivity {
             int dashPosition = str.indexOf("-");
             boolean unlocked = Boolean.parseBoolean(str.substring(dashPosition + 1));
 
+            if (unlocked)
+                unlockButtons(str);
+
             Log.d(TAG, unlocked ? "true" : "false");
         }
 
         is.close();
+    }
+
+    public void unlockButtons(String databaseItem) {
+        switch (databaseItem) {
+            case "dieren1-true":
+                dieren1.setEnabled(true);
+                break;
+            case "fruit-true":
+                fruit.setEnabled(true);
+                break;
+            case "insecten-true":
+                insecten.setEnabled(true);
+                break;
+            case "groenten-true":
+                groente.setEnabled(true);
+                break;
+            case "dieren2-true":
+                dieren2.setEnabled(true);
+                break;
+            case "eten-true":
+                eten.setEnabled(true);
+                break;
+            case "kleding-true":
+                kleding.setEnabled(true);
+                break;
+            case "kleur-true":
+                kleur.setEnabled(true);
+                break;
+            case "weer-true":
+                weer.setEnabled(true);
+                break;
+        }
     }
 }
