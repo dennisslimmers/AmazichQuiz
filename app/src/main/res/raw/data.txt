@@ -1,0 +1,9 @@
+dieren1-true
+fruit-false
+insecten-false
+groenten-false
+dieren2-false
+eten-false
+kleding-false
+kleur-false
+weer-false
