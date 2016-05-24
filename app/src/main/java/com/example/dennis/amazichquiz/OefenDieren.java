@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.TextView;
 
 public class OefenDieren extends AppCompatActivity {
     private String TAG = "DEBUG";
+    private String[] animals = {"Dog", "Cat", "Horse", "Tiger", "Lion"};
+    TextView animal;
 
     GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener(){
         @Override
@@ -16,14 +19,15 @@ public class OefenDieren extends AppCompatActivity {
             float sensitvity = 50;
 
             if ((e1.getX() - e2.getX()) > sensitvity) {
-                swipe += "Swipe Left\n";
+                swipe += "left";
             } else if ((e2.getX() - e1.getX()) > sensitvity) {
-                swipe += "Swipe Right\n";
+                swipe += "right";
             } else {
                 swipe += "\n";
             }
 
-            Log.d(TAG, swipe);
+            changeAnimal(swipe);
+//            Log.d(TAG, swipe);
 
             return super.onFling(e1, e2, velocityX, velocityY);
         }
@@ -35,6 +39,41 @@ public class OefenDieren extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oefen_dieren);
+
+        animal = (TextView) findViewById(R.id.textView);
+        setAnimal(0);
+    }
+
+    public void changeAnimal(String direction) {
+        int currentAnimalIndex = findIndex(animals, (String)animal.getText());
+        int newAnimalIndex = 0;
+
+        switch (direction) {
+            case "left":
+                newAnimalIndex = currentAnimalIndex + 1;
+                setAnimal(newAnimalIndex);
+                break;
+            case "right":
+                newAnimalIndex = currentAnimalIndex - 1;
+                setAnimal(newAnimalIndex);
+                break;
+        }
+    }
+
+    public int findIndex(String[] animals, String animal) {
+        int index = -1;
+
+        for (int ii = 0; ii < animals.length; ii++) {
+            if (animals[ii].equals(animal)) {
+                index = ii;
+            }
+        }
+
+        return index;
+    }
+
+    public void setAnimal(int index) {
+        animal.setText(animals[index]);
     }
 
     @Override
