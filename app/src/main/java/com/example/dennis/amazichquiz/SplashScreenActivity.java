@@ -7,8 +7,6 @@ import android.os.Bundle;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +20,5 @@ public class SplashScreenActivity extends AppCompatActivity {
                 finish();
             }
         }, 1000);
-
-    }}
+    }
+}
