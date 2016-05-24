@@ -19,11 +19,6 @@
         <activity android:name=".OefenActivity" />
         <activity android:name=".SpeelActivity" />
         <activity android:name=".OverActivity" />
-        <activity
-            android:name=".TestActivity"
-            android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme" >
-        </activity>
     </application>
 
 </manifest>
