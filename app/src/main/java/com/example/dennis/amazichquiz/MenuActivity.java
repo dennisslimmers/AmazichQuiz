@@ -29,8 +29,4 @@ public class MenuActivity extends AppCompatActivity {
         Intent i = new Intent(this, OverActivity.class);
         startActivity(i);
     }
-
-    
-
-
 }
