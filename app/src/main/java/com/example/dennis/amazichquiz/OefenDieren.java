@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class OefenDieren extends AppCompatActivity {
     private String TAG = "DEBUG";
-    private String[] animals = {"Dog", "Cat", "Horse", "Tiger", "Lion"};
+    private String[] animals = {"Dog", "Cat", "Horse", "Tiger", "Lion", "Bird", "Fish"};
     TextView animal;
 
     GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener(){
@@ -51,11 +51,17 @@ public class OefenDieren extends AppCompatActivity {
         switch (direction) {
             case "left":
                 newAnimalIndex = currentAnimalIndex + 1;
-                setAnimal(newAnimalIndex);
+
+                if (!checkNull(newAnimalIndex))
+                    setAnimal(newAnimalIndex);
+
                 break;
             case "right":
                 newAnimalIndex = currentAnimalIndex - 1;
-                setAnimal(newAnimalIndex);
+
+                if (!checkNull(newAnimalIndex))
+                    setAnimal(newAnimalIndex);
+
                 break;
         }
     }
@@ -70,6 +76,13 @@ public class OefenDieren extends AppCompatActivity {
         }
 
         return index;
+    }
+
+    public boolean checkNull (int index) {
+        if (index >= animals.length || index < 0)
+            return true;
+        else
+            return false;
     }
 
     public void setAnimal(int index) {
