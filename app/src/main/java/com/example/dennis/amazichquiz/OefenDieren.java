@@ -16,7 +16,7 @@ public class OefenDieren extends AppCompatActivity {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             String swipe = "";
-            float sensitvity = 50;
+            float sensitvity = 200;
 
             if ((e1.getX() - e2.getX()) > sensitvity) {
                 swipe += "left";
