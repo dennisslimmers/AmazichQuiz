@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class OefenDieren extends AppCompatActivity {
     private String TAG = "DEBUG";
     private String[] animals = {"Dog", "Cat", "Horse", "Tiger", "Lion", "Bird", "Fish"};
+    private int[] animalsPhoto = {R.drawable.dog,R.drawable.cat,R.drawable.horse,R.drawable.tiger,R.drawable.lion,R.drawable.bird,R.drawable.fish};
     TextView animal;
-
+    ImageView animalPhoto;
     GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener(){
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
@@ -42,6 +44,9 @@ public class OefenDieren extends AppCompatActivity {
 
         animal = (TextView) findViewById(R.id.textView);
         setAnimal(0);
+
+        animalPhoto = (ImageView) findViewById(R.id.animalView);
+        setAnimalPhoto(0);
     }
 
     public void changeAnimal(String direction) {
@@ -52,15 +57,19 @@ public class OefenDieren extends AppCompatActivity {
             case "left":
                 newAnimalIndex = currentAnimalIndex + 1;
 
-                if (!checkNull(newAnimalIndex))
+                if (!checkNull(newAnimalIndex)){
                     setAnimal(newAnimalIndex);
+                    setAnimalPhoto(newAnimalIndex);
+                }
 
                 break;
             case "right":
                 newAnimalIndex = currentAnimalIndex - 1;
 
-                if (!checkNull(newAnimalIndex))
+                if (!checkNull(newAnimalIndex)){
                     setAnimal(newAnimalIndex);
+                    setAnimalPhoto(newAnimalIndex);
+                }
 
                 break;
         }
@@ -89,6 +98,10 @@ public class OefenDieren extends AppCompatActivity {
         animal.setText(animals[index]);
     }
 
+    public void setAnimalPhoto (int index){
+      animalPhoto.setImageResource(animalsPhoto[index]);
+        Log.d(TAG, "hello");
+    }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         return gestureDetector.onTouchEvent(event);
