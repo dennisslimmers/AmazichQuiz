@@ -7,8 +7,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class OefenDieren extends AppCompatActivity {
-    private String[] animals = {"Dog", "Cat", "Horse", "Tiger", "Lion", "Bird", "Fish"};
-    private int[] animalPhotos = {R.drawable.dog,R.drawable.cat,R.drawable.horse,R.drawable.tiger,R.drawable.lion,R.drawable.bird,R.drawable.fish};
+    private String[] animals = {"Dog","Cat","Horse","Tiger","Lion","Bird","Fish"};
+
+    private int[] animalPhotos = {
+        R.drawable.dog,
+        R.drawable.cat,
+        R.drawable.horse,
+        R.drawable.tiger,
+        R.drawable.lion,
+        R.drawable.bird,
+        R.drawable.fish
+    };
+
     TextView animal;
     ImageView animalPhoto;
     SwipeListener sl;
