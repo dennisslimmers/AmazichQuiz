@@ -16,8 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuActivity" />
-        <activity android:name=".OefenActivity" />
-        <activity android:name=".SpeelActivity" />
+        <activity android:name=".OefenMenuActivity" />
+        <activity android:name=".SpeelMenuActivity" />
         <activity android:name=".OverActivity" />
         <activity android:name=".OefenDieren" />
         <activity android:name=".SpeelDieren"></activity>

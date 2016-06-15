@@ -1,8 +1,10 @@
 package com.example.dennis.amazichquiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import java.io.BufferedReader;
@@ -10,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class SpeelActivity extends AppCompatActivity {
+public class SpeelMenuActivity extends AppCompatActivity {
     private String TAG = "DEBUG";
     public Button dieren1;
     public Button fruit;
@@ -25,7 +27,7 @@ public class SpeelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speel);
+        setContentView(R.layout.activity_menu_speel);
         dieren1 = (Button) findViewById(R.id.button4);
         fruit = (Button) findViewById(R.id.button5);
         insecten = (Button) findViewById(R.id.button6);
@@ -93,4 +95,51 @@ public class SpeelActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    public void RedirectSpeelDieren(View v) {
+        Intent i = new Intent(this, SpeelDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelFruit(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelInsecten(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelGroente(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelDierenTwee(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelEten(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelKleding(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelWeer(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+    public void RedirectSpeelKleuren(View v) {
+        Intent i = new Intent(this, OefenDieren.class);
+        startActivity(i);
+    }
+
+
 }
