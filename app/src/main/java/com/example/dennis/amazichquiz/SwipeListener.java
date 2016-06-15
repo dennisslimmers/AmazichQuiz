@@ -1,5 +1,9 @@
 package com.example.dennis.amazichquiz;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -7,12 +11,20 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class SwipeListener extends AppCompatActivity {
     private String TAG = "DEBUG";
     public String[] itemArray;
-    public int[] photoArray;
+    public String[] translationsArray;
+    public String[] photoArray;
+    public int[] audioArray;
+    public AssetManager am;
     public TextView tv;
+    public TextView tvv;
     public ImageView iv;
+    public Context c;
 
     GestureDetector.SimpleOnGestureListener simpleOnGestureListener = new GestureDetector.SimpleOnGestureListener() {
         @Override
@@ -36,14 +48,21 @@ public class SwipeListener extends AppCompatActivity {
 
     GestureDetector gestureDetector = new GestureDetector(simpleOnGestureListener);
 
-    public SwipeListener (String[] itemArray, int[] photoArray, TextView tv, ImageView iv) {
+    public SwipeListener (String[] itemArray, String[] translationsArray, String[] photoArray, int[] audioArray, TextView tv, TextView tvv,  ImageView iv, Context c) {
+        this.am = c.getAssets();
         this.itemArray = itemArray;
         this.photoArray = photoArray;
         this.tv = tv;
         this.iv = iv;
+        this.tvv = tvv;
+        this.translationsArray = translationsArray;
+        this.audioArray = audioArray;
+        this.c = c;
 
         this.setItem(0);
-        this.setItemPhoto(0);
+        this.setItemPhoto(photoArray, 0);
+        this.setTranslation(0);
+        this.playAudio(0);
     }
 
     public void changeItem(String direction, String[] array, TextView item) {
@@ -56,7 +75,9 @@ public class SwipeListener extends AppCompatActivity {
 
                 if (!checkNull(newAnimalIndex, array)) {
                     setItem(newAnimalIndex);
-                    setItemPhoto(newAnimalIndex);
+                    setTranslation(newAnimalIndex);
+                    setItemPhoto(photoArray, newAnimalIndex);
+                    playAudio(newAnimalIndex);
                 }
 
                 break;
@@ -65,7 +86,9 @@ public class SwipeListener extends AppCompatActivity {
 
                 if (!checkNull(newAnimalIndex, array)){
                     setItem(newAnimalIndex);
-                    setItemPhoto(newAnimalIndex);
+                    setTranslation(newAnimalIndex);
+                    setItemPhoto(photoArray, newAnimalIndex);
+                    playAudio(newAnimalIndex);
                 }
 
                 break;
@@ -76,9 +99,25 @@ public class SwipeListener extends AppCompatActivity {
         tv.setText(itemArray[index]);
     }
 
-    public void setItemPhoto (int index) {
-        iv.setImageResource(photoArray[index]);
-        Log.d(TAG, "hello");
+    public void setTranslation(int index) {
+        tvv.setText(translationsArray[index]);
+    }
+
+    public void playAudio(int index) {
+        MediaPlayer m = MediaPlayer.create(c, audioArray[index]);
+        m.start();
+    }
+
+    public void setItemPhoto (String[] photosArray, int index) {
+        InputStream i;
+
+        try {
+            i = am.open(photoArray[index]);
+            Drawable d = Drawable.createFromStream(i, null);
+            iv.setImageDrawable(d);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public int findIndex(String[] animals, String animal) {

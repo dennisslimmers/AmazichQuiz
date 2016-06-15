@@ -25,4 +25,13 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/animalView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
 </RelativeLayout>

@@ -19,7 +19,8 @@
         <activity android:name=".OefenActivity" />
         <activity android:name=".SpeelActivity" />
         <activity android:name=".OverActivity" />
-        <activity android:name=".OefenDieren"></activity>
+        <activity android:name=".OefenDieren" />
+        <activity android:name=".SpeelDieren"></activity>
     </application>
 
 </manifest>
