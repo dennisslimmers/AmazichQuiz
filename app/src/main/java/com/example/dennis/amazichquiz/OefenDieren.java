@@ -25,14 +25,14 @@ public class OefenDieren extends AppCompatActivity {
     };
 
     private String[] photos = {
-        "fruit/dieren01_egel.jpg", "fruit/dieren01_ezel.jpg",
-        "fruit/dieren01_geit.jpg", "fruit/dieren01_hond.jpg",
-        "fruit/dieren01_jakhals.jpg", "fruit/dieren01_kat.jpg",
-        "fruit/dieren01_kikker.jpg", "fruit/dieren01_kip.jpg",
-        "fruit/dieren01_koe.jpg", "fruit/dieren01_konijn.jpg",
-        "fruit/dieren01_muis.jpg", "fruit/dieren01_paard.jpg",
-        "fruit/dieren01_schaap.jpg", "fruit/dieren01_vis.jpg",
-        "fruit/dieren01_vogel.jpg",
+        "dieren1/dieren01_egel.jpg", "dieren1/dieren01_ezel.jpg",
+        "dieren1/dieren01_geit.jpg", "dieren1/dieren01_hond.jpg",
+        "dieren1/dieren01_jakhals.jpg", "dieren1/dieren01_kat.jpg",
+        "dieren1/dieren01_kikker.jpg", "dieren1/dieren01_kip.jpg",
+        "dieren1/dieren01_koe.jpg", "dieren1/dieren01_konijn.jpg",
+        "dieren1/dieren01_muis.jpg", "dieren1/dieren01_paard.jpg",
+        "dieren1/dieren01_schaap.jpg", "dieren1/dieren01_vis.jpg",
+        "dieren1/dieren01_vogel.jpg",
     };
 
     private int[] audioFiles = {
