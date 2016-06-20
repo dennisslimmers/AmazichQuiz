@@ -7,42 +7,70 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#ffe513"
+    android:background="#0099cc"
     tools:context=".MenuActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/oefen"
-        android:id="@+id/button2"
-        android:onClick="RedirectOefen"
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp" />
+        android:stretchColumns="*">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/speel"
-        android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:onClick="RedirectSpeel"
-        />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp"
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/over"
-        android:id="@+id/button3"
-        android:layout_marginBottom="46dp"
-        android:onClick="RedirectOver"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button" />
+        >
+
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_height="fill_parent"
+            android:layout_column="0"
+            android:onClick="RedirectOefen"
+            android:background="#cc0033"
+            android:text="OEFEN"
+
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp"
+        >
+
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_height="fill_parent"
+            android:layout_column="0"
+            android:onClick="RedirectSpeel"
+            android:text="SPEEL"
+            android:background="#99cc33"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_height="fill_parent"
+            android:layout_column="0"
+            android:onClick="RedirectOver"
+            android:background="#ffe513"
+            android:text="OVER" />
+    </TableRow>
+ </TableLayout>
 
 </RelativeLayout>
