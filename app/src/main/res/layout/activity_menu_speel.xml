@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffe513"
+    android:background="#0099cc"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -20,6 +20,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
 
             >
@@ -29,6 +30,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#cc0033"
                 android:enabled="false"
                 android:onClick="RedirectSpeelDieren"
                 android:text="Dieren 01"
@@ -39,6 +41,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -46,6 +49,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#cc0033"
                 android:enabled="false"
                 android:onClick="RedirectSpeelFruit"
                 android:text="Fruit" />
@@ -54,6 +58,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -61,6 +66,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#cc0033"
                 android:enabled="false"
                 android:onClick="RedirectSpeelInsecten"
                 android:text="Insecten" />
@@ -69,6 +75,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -76,6 +83,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#99cc33"
                 android:enabled="false"
                 android:onClick="RedirectSpeelGroente"
                 android:text="groente" />
@@ -84,6 +92,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -91,6 +100,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#99cc33"
                 android:enabled="false"
                 android:onClick="RedirectSpeelDierenTwee"
                 android:text="DIEREN 02" />
@@ -99,6 +109,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -106,6 +117,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#99cc33"
                 android:enabled="false"
                 android:onClick="RedirectSpeelEten"
                 android:text="eten" />
@@ -114,6 +126,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -121,6 +134,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#ffe513"
                 android:enabled="false"
                 android:onClick="RedirectSpeelKleding"
                 android:text="kleding" />
@@ -129,6 +143,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1">
 
             <Button
@@ -136,6 +151,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#ffe513"
                 android:enabled="false"
                 android:onClick="RedirectSpeelKleuren"
                 android:text="kleur" />
@@ -151,6 +167,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_height="fill_parent"
                 android:layout_column="0"
+                android:background="#ffe513"
                 android:enabled="false"
                 android:onClick="RedirectSpeelWeer"
                 android:text="weer" />
