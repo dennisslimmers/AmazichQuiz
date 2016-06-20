@@ -19,42 +19,42 @@ public class OefenMenuActivity extends AppCompatActivity {
     }
 
     public void RedirectOefenFruit(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenFruit.class);
         startActivity(i);
     }
 
     public void RedirectOefenInsecten(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenInsecten.class);
         startActivity(i);
     }
 
     public void RedirectOefenGroente(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenGroente.class);
         startActivity(i);
     }
 
     public void RedirectOefenDierenTwee(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenDierenTwee.class);
         startActivity(i);
     }
 
     public void RedirectOefenEten(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenEten.class);
         startActivity(i);
     }
 
     public void RedirectOefenKleding(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenKleding.class);
         startActivity(i);
     }
 
     public void RedirectOefenWeer(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenWeer.class);
         startActivity(i);
     }
 
     public void RedirectOefenKleuren(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, OefenKleuren.class);
         startActivity(i);
     }
 
