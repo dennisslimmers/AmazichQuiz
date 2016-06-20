@@ -21,9 +21,8 @@
         <activity android:name=".OverActivity" />
         <activity android:name=".OefenDieren" />
         <activity android:name=".OefenFruit" />
-        <activity android:name=".OefenInsecten">
-            <activity android:name=".SpeelDieren" />
-        </activity>
+        <activity android:name=".OefenInsecten" />
+        <activity android:name=".SpeelDieren" />
         <activity android:name=".OefenGroente" />
         <activity android:name=".OefenDierenTwee" />
         <activity android:name=".OefenEten" />
