@@ -28,7 +28,15 @@
         <activity android:name=".OefenEten" />
         <activity android:name=".OefenKleding" />
         <activity android:name=".OefenWeer" />
-        <activity android:name=".OefenKleuren"></activity>
+        <activity android:name=".OefenKleuren" />
+        <activity android:name=".SpeelDierenTwee" />
+        <activity android:name=".SpeelEten" />
+        <activity android:name=".SpeelFruit" />
+        <activity android:name=".SpeelGroenten" />
+        <activity android:name=".SpeelInsecten" />
+        <activity android:name=".SpeelKleding" />
+        <activity android:name=".SpeelKleuren" />
+        <activity android:name=".SpeelWeer"></activity>
     </application>
 
 </manifest>

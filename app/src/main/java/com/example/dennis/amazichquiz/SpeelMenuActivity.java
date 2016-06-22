@@ -102,42 +102,42 @@ public class SpeelMenuActivity extends AppCompatActivity {
     }
 
     public void RedirectSpeelFruit(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelFruit.class);
         startActivity(i);
     }
 
     public void RedirectSpeelInsecten(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelInsecten.class);
         startActivity(i);
     }
 
     public void RedirectSpeelGroente(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelGroenten.class);
         startActivity(i);
     }
 
     public void RedirectSpeelDierenTwee(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelDierenTwee.class);
         startActivity(i);
     }
 
     public void RedirectSpeelEten(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelEten.class);
         startActivity(i);
     }
 
     public void RedirectSpeelKleding(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelKleding.class);
         startActivity(i);
     }
 
     public void RedirectSpeelWeer(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelWeer.class);
         startActivity(i);
     }
 
     public void RedirectSpeelKleuren(View v) {
-        Intent i = new Intent(this, OefenDieren.class);
+        Intent i = new Intent(this, SpeelKleding.class);
         startActivity(i);
     }
 
