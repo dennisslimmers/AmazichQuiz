@@ -2,6 +2,7 @@ package com.example.dennis.amazichquiz;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -74,5 +75,9 @@ public class SpeelDieren extends AppCompatActivity {
         buttonsArray[5] = button6;
 
         sp = new SpeelManager(words, photos, audioFiles, word, buttonsArray, this);
+    }
+
+    public void clickButton(View v) {
+        sp.clickButton(v);
     }
 }

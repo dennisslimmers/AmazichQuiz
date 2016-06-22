@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:onClick="clickButton">
 
 
     <TableLayout
@@ -24,7 +25,9 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="hey" />
+                android:onClick="clickButton"
+                android:text="hey"
+                android:textSize="0sp" />
 
             <Button
                 android:id="@+id/photo2"
@@ -32,7 +35,9 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="clickButton"
+                android:text="Button"
+                android:textSize="0sp" />
         </TableRow>
 
         <TableRow
@@ -47,7 +52,9 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="clickButton"
+                android:text="Button"
+                android:textSize="0sp" />
 
             <Button
                 android:id="@+id/photo4"
@@ -55,7 +62,9 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="clickButton"
+                android:text="Button"
+                android:textSize="0sp" />
         </TableRow>
 
         <TableRow
@@ -70,7 +79,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:onClick="clickButton"
+                android:text="Button"
+                android:textSize="0sp" />
 
             <Button
                 android:id="@+id/photo6"
@@ -78,7 +89,9 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Button"
+                android:textSize="0sp"
+                android:onClick="clickButton" />
         </TableRow>
 
         <TableRow
