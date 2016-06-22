@@ -1,5 +1,7 @@
 package com.example.dennis.amazichquiz;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,6 +50,7 @@ public class SpeelDieren extends AppCompatActivity {
     private Button button4;
     private Button button5;
     private Button button6;
+    Context c = this;
 
 
     SpeelManager sp;
@@ -80,4 +83,7 @@ public class SpeelDieren extends AppCompatActivity {
     public void clickButton(View v) {
         sp.clickButton(v);
     }
+    public static void redirect(Context c){
+        Intent i = new Intent(c,SpeelMenuActivity.class);
+        c.startActivity(i);}
 }

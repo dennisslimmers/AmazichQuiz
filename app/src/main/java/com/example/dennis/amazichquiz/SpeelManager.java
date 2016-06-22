@@ -1,6 +1,7 @@
 package com.example.dennis.amazichquiz;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -24,11 +25,13 @@ public class SpeelManager extends AppCompatActivity {
     String[] translations;
     String word;
     TextView tv;
+    int failure = 0;
     int index;
     int subjectCount;
     String subject;
     public AssetManager am;
-
+    public Context c;
+	SpeelDieren SD;
 
     public SpeelManager(String[] words, String[] photos, int[] audioFiles, TextView textView, Button[] buttonsArray, Context c) {
         this.buttonsArray = buttonsArray;
@@ -38,7 +41,7 @@ public class SpeelManager extends AppCompatActivity {
         this.photos = photos;
         this.words = words;
         this.tv = textView;
-
+        this.c = c;
         randomPhotoArray = new String[6];
         usedWords = new String[words.length];
 
@@ -48,7 +51,7 @@ public class SpeelManager extends AppCompatActivity {
     }
 
     public void randomize() {
-        if (subjectCount < words.length - 1) {
+        if (subjectCount < words.length -1) {
             Log.d("DEBUG", "subject count: "+subjectCount);
 
             this.word = randomWord(words);
@@ -154,14 +157,18 @@ public class SpeelManager extends AppCompatActivity {
     public void clickButton (View v) {
         Button btn = (Button) v;
         String text = ""+btn.getText();
-
         Log.d("DEBUG", text);
-
         if (text.equals(this.word)) {
             this.randomize();
+			failure = 0;
         } else {
             btn.setBackgroundResource(0);
             btn.setBackgroundColor(Color.RED);
+            failure++;
+            Log.d("debug",""+failure);
+            if(failure == 3){
+				SpeelDieren.redirect(c);
+            }
         }
     }
 }
