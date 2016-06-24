@@ -167,7 +167,9 @@ public class SpeelManager extends AppCompatActivity {
                 boolean contains = databaseArray[ii].contains(currentActivity);
 
                 if (contains) {
-                    this.lockedActivity = databaseArray[ii + 1];
+                    if (ii + 1 <= databaseArray.length) {
+                        this.lockedActivity = databaseArray[ii + 1];
+                    }
                 }
             }
         } catch (Exception e) {
@@ -238,7 +240,7 @@ public class SpeelManager extends AppCompatActivity {
 
         return index;
     }
-    
+
     public void ShuffleArray(Button[] array) {
         Button temp;
         int index;
