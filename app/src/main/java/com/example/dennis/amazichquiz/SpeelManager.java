@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -23,25 +24,29 @@ public class SpeelManager extends AppCompatActivity {
     String[] words;
     Button[] buttonsArray;
     String[] translations;
+    int[] audioFiles;
+    int[] audio;
     String word;
     TextView tv;
     int failure = 0;
     int index;
     int subjectCount;
     String subject;
-    public AssetManager am;
-    public Context c;
-	SpeelDieren SD;
+    AssetManager am;
+    Context c;
 
-    public SpeelManager(String[] words, String[] photos, int[] audioFiles, TextView textView, Button[] buttonsArray, Context c) {
+    public SpeelManager(String[] words, String[] photos, int[] audio, TextView textView, Button[] buttonsArray, Context c) {
         this.buttonsArray = buttonsArray;
         this.translations = new String[6];
+        this.audioFiles = new int[6];
 
         this.am = c.getAssets();
         this.photos = photos;
         this.words = words;
         this.tv = textView;
         this.c = c;
+        this.audio = audio;
+
         randomPhotoArray = new String[6];
         usedWords = new String[words.length];
 
@@ -75,6 +80,8 @@ public class SpeelManager extends AppCompatActivity {
 
             setTranslations();
 
+            setAudioFiles();
+
             ShuffleArray(buttonsArray);
 
             for (int i = 0; i <= randomPhotoArray.length -1; i++) {
@@ -82,10 +89,12 @@ public class SpeelManager extends AppCompatActivity {
                 buttonsArray[i].setText(translations[i]);
             }
 
+            playAudio(0);
+
             usedWords[subjectCount] = word;
             subjectCount ++;
         } else {
-
+            SpeelDieren.redirect(c);
         }
     }
 
@@ -128,6 +137,19 @@ public class SpeelManager extends AppCompatActivity {
         }
     }
 
+    public void setAudioFiles() {
+        for (int ii = 0; ii <= randomPhotoArray.length - 1; ii++) {
+            int index = findIndex(photos, randomPhotoArray[ii]);
+
+            this.audioFiles[ii] = audio[index];
+        }
+    }
+
+    public void playAudio(int index) {
+        MediaPlayer m = MediaPlayer.create(c, audioFiles[index]);
+        m.start();
+    }
+
     public int findIndex(String[] animals, String animal) {
         int index = -1;
 
@@ -158,15 +180,18 @@ public class SpeelManager extends AppCompatActivity {
         Button btn = (Button) v;
         String text = ""+btn.getText();
         Log.d("DEBUG", text);
+
         if (text.equals(this.word)) {
             this.randomize();
 			failure = 0;
         } else {
             btn.setBackgroundResource(0);
             btn.setBackgroundColor(Color.RED);
+
             failure++;
             Log.d("debug",""+failure);
-            if(failure == 3){
+
+            if (failure == 3) {
 				SpeelDieren.redirect(c);
             }
         }

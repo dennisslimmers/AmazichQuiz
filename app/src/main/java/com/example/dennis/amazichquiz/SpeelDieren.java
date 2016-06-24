@@ -50,8 +50,6 @@ public class SpeelDieren extends AppCompatActivity {
     private Button button4;
     private Button button5;
     private Button button6;
-    Context c = this;
-
 
     SpeelManager sp;
 
@@ -83,7 +81,9 @@ public class SpeelDieren extends AppCompatActivity {
     public void clickButton(View v) {
         sp.clickButton(v);
     }
-    public static void redirect(Context c){
+
+    public static void redirect(Context c) {
         Intent i = new Intent(c,SpeelMenuActivity.class);
-        c.startActivity(i);}
+        c.startActivity(i);
+    }
 }
