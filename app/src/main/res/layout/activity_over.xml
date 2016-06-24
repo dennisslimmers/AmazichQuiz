@@ -10,4 +10,25 @@
     android:background="#0099cc"
     tools:context="com.example.dennis.amazichquiz.OverActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Deze app is ontwikkeld door: Ploegnl, Darkapp and BlockSwallower"
+        android:id="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="145dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Deze app is eerste instantie bedoeld voor kinderen die geiintereseerd zijn in het leren van de amazich taal"
+        android:id="@+id/textView5"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="85dp" />
 </RelativeLayout>
