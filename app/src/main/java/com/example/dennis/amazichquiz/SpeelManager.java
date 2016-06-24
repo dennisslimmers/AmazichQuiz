@@ -256,8 +256,7 @@ public class SpeelManager extends AppCompatActivity {
 
     public void clickButton (View v) {
         Button btn = (Button) v;
-        String text = ""+btn.getText();
-        Log.d("DEBUG", text);
+        String text = (String) btn.getText();
 
         if (text.equals(this.word)) {
             this.randomize();
