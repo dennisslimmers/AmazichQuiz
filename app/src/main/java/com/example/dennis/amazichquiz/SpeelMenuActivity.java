@@ -1,6 +1,7 @@
 package com.example.dennis.amazichquiz;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -47,8 +50,8 @@ public class SpeelMenuActivity extends AppCompatActivity {
 
     public void readDatabase() throws IOException {
         String str = "";
-        InputStream is = this.getResources().openRawResource(R.raw.data);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        File database = new File(Environment.getExternalStorageDirectory().getPath() + "/database.txt");
+        BufferedReader reader = new BufferedReader(new FileReader(database));
 
         while ((str = reader.readLine()) != null) {
             // fetch boolean
@@ -61,7 +64,7 @@ public class SpeelMenuActivity extends AppCompatActivity {
             Log.d(TAG, unlocked ? "true" : "false");
         }
 
-        is.close();
+        reader.close();
     }
 
     public void unlockButtons(String databaseItem) {

@@ -1,19 +1,24 @@
 package com.example.dennis.amazichquiz;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -24,9 +29,14 @@ public class SpeelManager extends AppCompatActivity {
     String[] words;
     Button[] buttonsArray;
     String[] translations;
+    String databaseString;
+    String[] databaseArray;
     int[] audioFiles;
     int[] audio;
+    String lockedActivity;
+    String unlockedActivity;
     String word;
+    File data;
     TextView tv;
     int failure = 0;
     int index;
@@ -39,6 +49,7 @@ public class SpeelManager extends AppCompatActivity {
         this.buttonsArray = buttonsArray;
         this.translations = new String[6];
         this.audioFiles = new int[6];
+        this.databaseArray = new String[9];
 
         this.am = c.getAssets();
         this.photos = photos;
@@ -46,6 +57,9 @@ public class SpeelManager extends AppCompatActivity {
         this.tv = textView;
         this.c = c;
         this.audio = audio;
+
+        this.lockedActivity = "";
+        this.unlockedActivity = "";
 
         randomPhotoArray = new String[6];
         usedWords = new String[words.length];
@@ -84,9 +98,9 @@ public class SpeelManager extends AppCompatActivity {
 
             ShuffleArray(buttonsArray);
 
-            for (int i = 0; i <= randomPhotoArray.length -1; i++) {
-                setItemPhoto(randomPhotoArray[i], buttonsArray[i]);
-                buttonsArray[i].setText(translations[i]);
+            for (int nn = 0; nn <= randomPhotoArray.length -1; nn++) {
+                setItemPhoto(randomPhotoArray[nn], buttonsArray[nn]);
+                buttonsArray[nn].setText(translations[nn]);
             }
 
             playAudio(0);
@@ -94,7 +108,70 @@ public class SpeelManager extends AppCompatActivity {
             usedWords[subjectCount] = word;
             subjectCount ++;
         } else {
+            writeDatabase();
+
+            try {
+                if (lockedActivity.contains("false")) {
+                    unlockedActivity = lockedActivity.replace("false", "true");
+                }
+
+                databaseString = databaseString.replace(lockedActivity, unlockedActivity);
+
+                FileOutputStream fos = new FileOutputStream(data);
+                OutputStreamWriter osr = new OutputStreamWriter(fos);
+
+                osr.append(databaseString);
+
+                osr.close();
+                fos.close();
+            } catch (Exception e) {
+                Log.d("Exception", e.getMessage());
+            }
+
             SpeelDieren.redirect(c);
+        }
+    }
+
+    public void writeDatabase () {
+        try {
+            String str = "";
+            data = new File(Environment.getExternalStorageDirectory().getPath() + "/database.txt");
+            BufferedReader reader = new BufferedReader(new FileReader(data));
+
+            databaseString = "";
+            int index = 0;
+            while ((str = reader.readLine()) != null) {
+                databaseString += str;
+                databaseString += "\n";
+
+                databaseArray[index] = str;
+
+                index++;
+            }
+
+            String currentActivity =  c.getClass().getName().replace("com.example.dennis.amazichquiz.", "");
+            String fullActivityName = currentActivity;
+            currentActivity = currentActivity.replace("Speel", "");
+            currentActivity = Character.toLowerCase(currentActivity.charAt(0)) +
+                                                   (currentActivity.length() > 1 ? currentActivity.substring(1) : "");
+
+            if (fullActivityName.equals("SpeelDieren")) {
+                currentActivity += "1";
+            }
+
+            if (fullActivityName.equals("SpeelDierenTwee")) {
+                currentActivity += "2";
+            }
+
+            for (int ii = 0; ii <= databaseArray.length; ii++) {
+                boolean contains = databaseArray[ii].contains(currentActivity);
+
+                if (contains) {
+                    this.lockedActivity = databaseArray[ii + 1];
+                }
+            }
+        } catch (Exception e) {
+            Log.d("Exception", e.getMessage());
         }
     }
 
@@ -161,8 +238,7 @@ public class SpeelManager extends AppCompatActivity {
 
         return index;
     }
-
-
+    
     public void ShuffleArray(Button[] array) {
         Button temp;
         int index;
