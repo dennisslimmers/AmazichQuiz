@@ -113,17 +113,18 @@ public class SpeelManager extends AppCompatActivity {
             try {
                 if (lockedActivity.contains("false")) {
                     unlockedActivity = lockedActivity.replace("false", "true");
+                    databaseString = databaseString.replace(lockedActivity, unlockedActivity);
+
+                    FileOutputStream fos = new FileOutputStream(data);
+                    OutputStreamWriter osr = new OutputStreamWriter(fos);
+
+                    osr.append(databaseString);
+
+                    osr.close();
+                    fos.close();
                 }
 
-                databaseString = databaseString.replace(lockedActivity, unlockedActivity);
 
-                FileOutputStream fos = new FileOutputStream(data);
-                OutputStreamWriter osr = new OutputStreamWriter(fos);
-
-                osr.append(databaseString);
-
-                osr.close();
-                fos.close();
             } catch (Exception e) {
                 Log.d("Exception", e.getMessage());
             }
@@ -268,7 +269,7 @@ public class SpeelManager extends AppCompatActivity {
             failure++;
             Log.d("debug",""+failure);
 
-            if (failure == 3) {
+            if (failure == 30) {
 				SpeelDieren.redirect(c);
             }
         }

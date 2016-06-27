@@ -69,3 +69,4 @@ public class OefenDieren extends AppCompatActivity {
         return sl.gestureDetector.onTouchEvent(event);
     }
 }
+

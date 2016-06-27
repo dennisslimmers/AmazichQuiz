@@ -12,19 +12,19 @@ public class SpeelFruit extends AppCompatActivity {
             "fruit/fruit_appel.jpg", "fruit/fruit_peer.jpg",
             "fruit/fruit_abrikoos.jpg", "fruit/fruit_perzik.jpg",
             "fruit/fruit_druiven.jpg", "fruit/fruit_watermeloen.jpg",
-            "fruit/fruit_honingmeloen.jpg", "fruit/fruit_honingmeloen.jpg",
-            "fruit/fruit_granaatappel.jpg", "fruit/fruit_vijg.jpg",
-            "fruit/fruit_cactusvijg.jpg", "fruit/fruit_pruim.jpg",
-            "fruit/fruit_dadel.jpg", "fruit/fruit_citroen.jpg",
-            "fruit/fruit_bananen.jpg",
+            "fruit/fruit_honingmeloen.jpg", "fruit/fruit_granaatappel.jpg",
+            "fruit/fruit_vijg.jpg","fruit/fruit_cactusvijg.jpg","fruit/fruit_pruim.jpg","fruit/fruit_sinaasappel.jpg",
+            "fruit/fruit_dadel.jpg","fruit/fruit_citroen.jpg","fruit/fruit_bananen.jpg"
+
+
     };
 
     private String[] words = {
-            "tateffaht", "tafirast", "rmecmac",
-            "rxux","aḍil","ddellaɛ",
-            "ddellaɛ", "ddellaɛ", "arremman",
-            "tazart", "tahendict", "rbarquq",
-            "tini", "llaymun", "banan"
+            "tateffaht","tafirast","rmecmac",
+            "rxux","aḍil","ddellaɛ","abettix",
+            "arremman","tazart","tahendict",
+            "rbarquq","taleccint","tini",
+            "llaymun","banan"
     };
 
     private int[] audioFiles = {
