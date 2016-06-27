@@ -17,7 +17,7 @@ public class OefenKleding extends AppCompatActivity {
     };
 
     private String[] translations = {
-            "ssarwal", "amaryul", "camisita ",
+            "ssarwal", "amaryul", "camisita",
             "aqabud","tisila","ihakusen",
             "tcaccict", "tablust", "farda",
             "tcinklat", "iwantisan", "tqacir",

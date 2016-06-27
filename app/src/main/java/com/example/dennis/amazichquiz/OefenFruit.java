@@ -11,16 +11,16 @@ public class OefenFruit extends AppCompatActivity {
     private String[] words = {
             "appel", "peer", "abrikoos",
             "perzik","druiven","watermeloen",
-            "honingmeloen", "honingmeloen", "granaatappel",
-            "vijg", "cactusvijg", "pruim",
+            "honingmeloen", "granaatappel", "vijg",
+            "cactusvijg", "pruim", "sinaasappel",
             "dadel", "citroen", "bananen"
     };
 
     private String[] translations = {
             "tateffaht", "tafirast", "rmecmac",
             "rxux","aḍil","ddellaɛ",
-            "ddellaɛ", "ddellaɛ", "arremman",
-            "tazart", "tahendict", "rbarquq",
+            "abettix", "arremman", "tazart",
+            "tahendict", "rbarquq", "taleccint",
             "tini", "llaymun", "banan"
     };
 
@@ -28,9 +28,9 @@ public class OefenFruit extends AppCompatActivity {
             "fruit/fruit_appel.jpg", "fruit/fruit_peer.jpg",
             "fruit/fruit_abrikoos.jpg", "fruit/fruit_perzik.jpg",
             "fruit/fruit_druiven.jpg", "fruit/fruit_watermeloen.jpg",
-            "fruit/fruit_honingmeloen.jpg", "fruit/fruit_honingmeloen.jpg",
-            "fruit/fruit_granaatappel.jpg", "fruit/fruit_vijg.jpg",
-            "fruit/fruit_cactusvijg.jpg", "fruit/fruit_pruim.jpg",
+            "fruit/fruit_honingmeloen.jpg", "fruit/fruit_granaatappel.jpg",
+            "fruit/fruit_vijg.jpg", "fruit/fruit_cactusvijg.jpg",
+            "fruit/fruit_pruim.jpg", "fruit/fruit_sinaasappel.jpg",
             "fruit/fruit_dadel.jpg", "fruit/fruit_citroen.jpg",
             "fruit/fruit_bananen.jpg",
     };
