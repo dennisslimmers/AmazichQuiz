@@ -153,6 +153,9 @@ public class SpeelManager extends AppCompatActivity {
             String currentActivity =  c.getClass().getName().replace("com.example.dennis.amazichquiz.", "");
             String fullActivityName = currentActivity;
             currentActivity = currentActivity.replace("Speel", "");
+            if(fullActivityName.equals("SpeelDierenTwee")){
+                currentActivity = currentActivity.replace("Twee", "");
+            }
             currentActivity = Character.toLowerCase(currentActivity.charAt(0)) +
                                                    (currentActivity.length() > 1 ? currentActivity.substring(1) : "");
 
@@ -163,9 +166,10 @@ public class SpeelManager extends AppCompatActivity {
             if (fullActivityName.equals("SpeelDierenTwee")) {
                 currentActivity += "2";
             }
-
+            Log.d("MIDTASK",currentActivity);
             for (int ii = 0; ii <= databaseArray.length; ii++) {
                 boolean contains = databaseArray[ii].contains(currentActivity);
+                Log.d("FINISHED", ""+contains);
 
                 if (contains) {
                     if (ii + 1 <= databaseArray.length) {
@@ -269,7 +273,7 @@ public class SpeelManager extends AppCompatActivity {
             failure++;
             Log.d("debug",""+failure);
 
-            if (failure == 30) {
+            if (failure == 3) {
 				SpeelDieren.redirect(c);
             }
         }
