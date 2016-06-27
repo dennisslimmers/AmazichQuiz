@@ -30,7 +30,7 @@ public class SpeelGroenten extends AppCompatActivity {
     private int[] audioFiles = {
             R.raw.groente_kikkererwten, R.raw.groente_linzen,
             R.raw.groente_bonen, R.raw.groente_tomaat,
-            R.raw.groente_olijven, R.raw.groente_tomaat,
+            R.raw.groente_olijven, R.raw.groente_aardappel,
             R.raw.groente_ui, R.raw.groente_knoflook,
             R.raw.groente_mais, R.raw.groente_paprika,
             R.raw.groente_pompoen, R.raw.groente_wortel,
