@@ -28,4 +28,11 @@ public class MenuActivity extends AppCompatActivity {
         Intent i = new Intent(this, OverActivity.class);
         startActivity(i);
     }
+
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
+
+    }
 }

@@ -86,4 +86,10 @@ public class SpeelDieren extends AppCompatActivity {
         Intent i = new Intent(c,SpeelMenuActivity.class);
         c.startActivity(i);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this,SpeelMenuActivity.class);
+        startActivity(i);
+    }
 }

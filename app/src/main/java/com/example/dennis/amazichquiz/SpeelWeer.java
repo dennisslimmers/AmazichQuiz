@@ -1,5 +1,6 @@
 package com.example.dennis.amazichquiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -79,5 +80,9 @@ public class SpeelWeer extends AppCompatActivity {
 
     public void clickButton(View v) {
         sp.clickButton(v);
+    }
+    public void onBackPressed() {
+        Intent i = new Intent(this,SpeelMenuActivity.class);
+        startActivity(i);
     }
 }

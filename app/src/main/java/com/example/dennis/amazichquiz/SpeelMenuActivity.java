@@ -144,5 +144,9 @@ public class SpeelMenuActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void onBackPressed() {
+        Intent i = new Intent(this,MenuActivity.class);
+        startActivity(i);
+    }
 
 }
